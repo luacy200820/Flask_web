@@ -1,0 +1,24 @@
+<!doctype html>
+<html>
+   <body>
+   
+      <table border = 1>
+         <thead>
+            <td>Name</td>
+            <td>sec</td>
+             
+         </thead>
+         
+         {% for row in rows %}
+            <tr>
+               <td>{{row["ID"]}}</td>
+               <td>{{row["num"]}}</td>
+         
+            </tr>
+         {% endfor %}
+      </table>
+      <h5> <a href="{{url_for('login')}}">Go back to home page</a> </h5>
+      <!-- <a href = "/">Go back to home page</a> -->
+      
+   </body>
+</html>

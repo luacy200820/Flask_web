@@ -1,4 +1,4 @@
-from flask import Flask, render_template,url_for,request,session
+from flask import Flask, render_template,url_for,request,session,redirect
 import sqlite3 
 app = Flask(__name__,static_folder='./templates/')
 app.secret_key = 'itissecectkey'
@@ -53,6 +53,13 @@ def login():
             msg = 'incorrect id / password'
         # msg = rows
     return render_template('login.html',msg = msg)   
+         
+@app.route('/logout')
+def logout():
+    session.pop('loggedin', None)
+    session.pop('id', None)
+    session.pop('sec', None)
+    return redirect(url_for('login'))
 
 
 @app.route('/list')

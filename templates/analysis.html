@@ -1,9 +1,12 @@
 <!doctype html>
 <html>
+    <head>
+        <link href="{{ url_for('static', filename='./login.css') }}" rel="stylesheet">
+    </head>
    <body>
    
       成功! : {{ msg }}
-      <h5> <a href="{{url_for('login')}}">Go back to home page</a> </h5>
-      
+      <br><br>
+      <a href="{{ url_for('logout') }}" class="btn">Logout</a>
    </body>
 </html>

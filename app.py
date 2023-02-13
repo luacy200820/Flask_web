@@ -5,6 +5,13 @@ app.secret_key = 'itissecectkey'
 @app.route('/')
 def home():
     return render_template('index.html')
+@app.route('/delete',methods = ["POST","GET"])
+def delete():
+    conn = sqlite3.connect("database.db") 
+    cur = conn.cursor()
+    cur.execute("DELETE from user")
+    conn.commit()
+    return render_template('index.html')
 
 @app.route('/register')
 def register():
@@ -70,5 +77,7 @@ def list():
     cur.execute("select * from user")
     rows = cur.fetchall()
     return render_template('list.html',rows=rows)
+
+
 if __name__ == '__main__':
    app.run(debug = True)

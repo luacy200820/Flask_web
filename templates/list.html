@@ -6,6 +6,12 @@
          <thead>
             <td>Name</td>
             <td>sec</td>
+            <td>time</td>
+            <td>eschar</td>
+            <td>slough</td>
+            <td>granulation</td>
+            <td>area</td>
+            <td>img</td>
              
          </thead>
          
@@ -13,7 +19,12 @@
             <tr>
                <td>{{row["ID"]}}</td>
                <td>{{row["num"]}}</td>
-         
+               <td>{{row["visit_time"]}}</td>
+               <td>{{row["eschar"]}}</td>
+               <td>{{row["slough"]}}</td>
+               <td>{{row["granulation"]}}</td>
+               <td>{{row["area"]}}</td>
+               <td>{{row["img"]}}</td>
             </tr>
          {% endfor %}
       </table>

@@ -5,8 +5,18 @@
     </head>
    <body>
    
-      成功! : {{ msg }}
+      成功! : {{ value }}
       <br><br>
+
+      <h1>Select a Date</h1>
+        <form method="POST">
+            <input type="date" name="date">
+            <button type="submit">Submit</button>
+        </form>
+        <br><br>
+        {% if date %}
+        選擇: {{ date }}
+        {% endif %}
       <a href="{{ url_for('logout') }}" class="btn">Logout</a>
    </body>
 </html>
